@@ -14,7 +14,12 @@
                 <a href="#trangchu">Trang chủ</a>
                 <a href="#sanpham">Sản phẩm</a>
                 <a href="#giohang">Giỏ hàng</a>
-                <a href="login.html">Đăng nhập</a>
+                <span></span>
+                <span id="userInfo" style="display: none;">
+                    Xin chào, <span id="username"></span>
+                    <a href="#" id="logout">Đăng xuất</a>
+                </span>
+                <a href="login.html" id="loginLink">Đăng nhập</a>
             </div>
         </nav>
     </header>
@@ -23,7 +28,7 @@
         <h1>Sản phẩm nổi bật</h1>
         <div class="products">
             <div class="product-card">
-                <img src="assets/images/laptop.jpg" alt="Laptop">
+                <img src="assets/images/laptopgaming.jpg" alt="Laptop">
                 <h3>Laptop Gaming</h3>
                 <p>15.000.000 đ</p>
                 <button>Thêm vào giỏ</button>
@@ -44,7 +49,37 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Shop Điện Tử. Tất cả các quyền được bảo lưu.</p>
+        <p>&copy; 2025 Shop Điện Tử. Tất cả các quyền được bảo lưu.</p>
     </footer>
+
+    <script>
+        // Kiểm tra trạng thái đăng nhập
+        function checkLogin() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            const userInfo = document.getElementById('userInfo');
+            const loginLink = document.getElementById('loginLink');
+            const username = document.getElementById('username');
+
+            if (currentUser) {
+                userInfo.style.display = 'inline';
+                loginLink.style.display = 'none';
+                username.textContent = currentUser.username;
+            } else {
+                userInfo.style.display = 'none';
+                loginLink.style.display = 'inline';
+            }
+        }
+
+        // Xử lý đăng xuất
+        document.getElementById('logout').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('currentUser');
+            checkLogin();
+            window.location.href = 'index.html';
+        });
+
+        // Kiểm tra đăng nhập khi trang được tải
+        window.addEventListener('load', checkLogin);
+    </script>
 </body>
 </html>
