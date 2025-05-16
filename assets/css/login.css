@@ -36,3 +36,16 @@ button {
 button:hover {
     background-color: #166fe5;
 }
+body { background: #f5f6fa; }
+        .auth-container { max-width: 900px; margin: 48px auto; box-shadow: 0 4px 32px rgba(0,0,0,0.08); border-radius: 18px; overflow: hidden; background: #fff; display: flex; min-height: 600px; }
+        .auth-left { background: linear-gradient(135deg, #388bff 0%, #2563eb 100%); color: #fff; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; }
+        .auth-left i { font-size: 64px; margin-bottom: 24px; }
+        .auth-right { flex: 1.2; background: #fff; padding: 40px 32px; display: flex; flex-direction: column; justify-content: center; }
+        .nav-tabs .nav-link.active { border: none; border-bottom: 2px solid #2563eb; color: #2563eb; background: none; }
+        .nav-tabs .nav-link { border: none; color: #333; }
+        .form-check-label { font-size: 0.95rem; }
+        .social-btn { min-width: 48px; }
+        @media (max-width: 900px) {
+            .auth-container { flex-direction: column; min-height: unset; }
+            .auth-left, .auth-right { padding: 32px 12px; }
+        }
