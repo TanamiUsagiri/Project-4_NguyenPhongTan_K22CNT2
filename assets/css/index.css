@@ -6,6 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    padding-top: 70px;
 }
 
 header {
@@ -21,6 +22,8 @@ nav {
 }
 
 .logo {
+    flex: auto;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -60,4 +63,31 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+/* Nếu muốn thêm khoảng cách cho các badge trên card */
+.card .badge {
+    z-index: 3;
+}
+/* Nếu muốn thêm padding cho section */
+section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Footer luôn ở dưới cùng nếu nội dung ít */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Ẩn border card khi hover nếu muốn */
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-color: #e3e3e3;
+}
+
+/* Tùy chỉnh icon màu xanh cho danh mục */
+.card i.text-primary {
+    color: #2563eb !important;
 }
